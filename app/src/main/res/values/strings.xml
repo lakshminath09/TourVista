@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TourVista</string>
+    <string name="taj_mahal">Taj Mahal</string>
+    <string name="goa_beach">Goa Beach</string>
+    <string name="shimla">Shimla</string>
+    <string name="meenakshi_temple">Meenakshi Temple</string>
+</resources>

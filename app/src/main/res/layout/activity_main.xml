@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- MAIN HOME SCREEN -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        android:background="#F8F9FA">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- TOP HEADER -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/btnMenu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="☰"
+                    android:textSize="30sp"
+                    android:textColor="#222222"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hi, Traveller 👋"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover India, one journey at a time."
+                android:textSize="15sp"
+                android:textColor="#777777"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- SEARCH BAR -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/search_bar_bg"
+                android:paddingStart="18dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="20dp">
+
+                <EditText
+                    android:id="@+id/searchBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Search..."
+                    android:textSize="17sp"
+                    android:singleLine="true"
+                    android:background="@android:color/transparent"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="🔍"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <!-- CATEGORY TITLE -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore by category"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="12dp" />
+
+            <!-- CATEGORY SCROLL -->
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:fillViewport="false"
+                android:overScrollMode="always"
+                android:layout_marginBottom="25dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnHistorical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="🏛 Historical"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="10dp" />
+
+                    <Button
+                        android:id="@+id/btnSpiritual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="🛕 Spiritual"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="10dp" />
+
+                    <Button
+                        android:id="@+id/btnBeaches"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="🏖 Beaches"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="10dp" />
+
+                    <Button
+                        android:id="@+id/btnHills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="⛰ Hill Stations"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="10dp" />
+
+                    <Button
+                        android:id="@+id/btnNature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="🌿 Nature"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="10dp" />
+
+                    <Button
+                        android:id="@+id/btnCities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="🌆 Cities"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- POPULAR DESTINATIONS -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular destinations"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="15dp" />
+
+            <!-- TAJ MAHAL -->
+
+            <LinearLayout
+                android:id="@+id/cardTajMahal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/tajmahal"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taj Mahal"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Agra, Uttar Pradesh"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- KAMAKHYA -->
+
+            <LinearLayout
+                android:id="@+id/cardKamakhya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/kamakhya"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kamakhya Temple"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Guwahati, Assam"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- GOLDEN TEMPLE -->
+
+            <LinearLayout
+                android:id="@+id/cardGoldenTemple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/goldentemple"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Golden Temple"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Amritsar, Punjab"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- SHILLONG -->
+
+            <LinearLayout
+                android:id="@+id/cardShillong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/shillong"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shillong"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Meghalaya"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- VIZAG -->
+
+            <LinearLayout
+                android:id="@+id/cardVizag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/vizag"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visakhapatnam"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Andhra Pradesh"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- CHARMINAR -->
+
+            <LinearLayout
+                android:id="@+id/cardCharminar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/charminar"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Charminar"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Hyderabad, Telangana"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- PANGONG -->
+
+            <LinearLayout
+                android:id="@+id/cardPangong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/pangong"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pangong Lake"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Ladakh"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- BAGA -->
+
+            <LinearLayout
+                android:id="@+id/cardBaga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/baga"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baga Beach"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Goa"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- LONAVALA -->
+
+            <LinearLayout
+                android:id="@+id/cardLonavala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/lonavala"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lonavala"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Maharashtra"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- TAWANG -->
+
+            <LinearLayout
+                android:id="@+id/cardTawang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="18dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/tawang"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tawang"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Arunachal Pradesh"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+            <!-- HARIDWAR -->
+
+            <LinearLayout
+                android:id="@+id/cardHaridwar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/haridwar"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Haridwar"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Uttarakhand"
+                    android:textSize="14sp"
+                    android:textColor="#777777" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- DRAWER -->
+
+    <include
+        layout="@layout/drawer_menu"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

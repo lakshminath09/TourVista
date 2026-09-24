@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- BACK BUTTON -->
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="←  Back"
+            android:textSize="17sp"
+            android:textColor="#222222"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+        <!-- PROFILE HEADER -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:text="👤"
+                android:textSize="48sp"
+                android:gravity="center"
+                android:background="#E8F5E9" />
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lakshmi Devi"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TourVista Traveller"
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+
+        <!-- PROFILE INFORMATION -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal Information"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginBottom="12dp" />
+
+
+        <!-- NAME -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="👤   Name\n       Lakshmi Devi"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:background="#FFFFFF" />
+
+
+        <!-- EMAIL -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="✉️   Email\n       lakshmidevi@example.com"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+
+        <!-- PHONE -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📱   Phone\n       +91 XXXXX XXXXX"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+
+        <!-- PREFERENCES -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Travel Preferences"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="12dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🌄   Favourite destination type\n       Nature &amp; Hill Stations"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:background="#FFFFFF" />
+
+
+        <!-- EDIT PROFILE -->
+
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Edit Profile"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2E7D32"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>
