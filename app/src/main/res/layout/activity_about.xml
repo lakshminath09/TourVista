@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FAFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Back Button -->
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:text="←  Back"
+            android:textColor="#1976D2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp" />
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/tourvista_logo"
+            android:scaleType="centerInside"
+            android:contentDescription="TourVista Logo" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="About TourVista"
+            android:textColor="#1565C0"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Discover India, one journey at a time."
+            android:textColor="#607D8B"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:gravity="center" />
+
+        <!-- About TourVista -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="About TourVista"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TourVista is a travel application designed to make exploring India easier, smarter and more enjoyable. The app brings destinations, travel planning and useful travel information together in one simple platform."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- Our Purpose -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Our Purpose"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TourVista aims to help travellers discover the diverse beauty of India, from historical monuments and spiritual destinations to beaches, hill stations, nature destinations and vibrant cities. We want travel planning to feel simple and accessible for everyone."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- What TourVista Offers -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="What TourVista Offers"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• Explore popular destinations across India&#10;&#10;• Search destinations quickly using the search feature&#10;&#10;• Filter destinations by categories such as historical, spiritual, beaches, hills, nature and cities&#10;&#10;• View detailed information about destinations&#10;&#10;• Save favourite destinations for later&#10;&#10;• Create and manage travel plans&#10;&#10;• Manage your profile and travel preferences&#10;&#10;• Customize app settings such as language, appearance and notifications"
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp" />
+
+        <!-- Travel Planning -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Travel Planning"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="With TourVista, travellers can create trips by selecting a destination, travel dates, number of travellers and trip type. Created trips are saved in the app and can be viewed from the My Trips section."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- Explore India -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Explore India"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="India has a rich combination of history, culture, spirituality, nature and modern cities. TourVista brings these different travel experiences together so that users can discover destinations such as the Taj Mahal, Golden Temple, Shillong, Tawang, Baga Beach, Pangong Lake, Charminar and many more."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- Our Vision -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Our Vision"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Our vision is to create a convenient digital travel companion that helps people discover new places, organize their journeys and make better use of their travel time. TourVista is designed with a simple interface so that users can explore and plan without unnecessary complexity."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- Future Features -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Future Features"
+            android:textColor="#1565C0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TourVista can be further enhanced with AI-powered travel planning, personalized recommendations, nearby food and stay suggestions, transportation assistance, budget-based planning and real-time travel information."
+            android:textColor="#455A64"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp" />
+
+        <!-- Closing -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Your Journey. Your India. Your TourVista."
+            android:textColor="#1976D2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Thank you for choosing TourVista as your travel companion."
+            android:textColor="#607D8B"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp" />
+
+        <!-- Version -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:text="TourVista • Version 1.0"
+            android:textColor="#90A4AE"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</ScrollView>

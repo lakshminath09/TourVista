@@ -4,75 +4,53 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
+
+    private lateinit var switchNotifications: Switch
+    private lateinit var txtSelectedLanguage: TextView
+    private lateinit var txtAppearance: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_settings)
 
-        // -----------------------------
-        // FIND VIEWS
-        // -----------------------------
+        val btnBack = findViewById<TextView>(R.id.btnBack)
 
-        val btnBack =
-            findViewById<TextView>(R.id.btnBack)
+        switchNotifications =
+            findViewById(R.id.switchNotifications)
 
-        val settingProfile =
-            findViewById<LinearLayout>(R.id.settingProfile)
+        txtSelectedLanguage =
+            findViewById(R.id.txtSelectedLanguage)
 
-        val settingNotifications =
-            findViewById<LinearLayout>(R.id.settingNotifications)
+        txtAppearance =
+            findViewById(R.id.txtAppearance)
 
-        val settingLanguage =
-            findViewById<LinearLayout>(R.id.settingLanguage)
+        val layoutLanguage =
+            findViewById<LinearLayout>(R.id.layoutLanguage)
 
-        val settingAppearance =
-            findViewById<LinearLayout>(R.id.settingAppearance)
+        val layoutAppearance =
+            findViewById<LinearLayout>(R.id.layoutAppearance)
 
-        val settingLocation =
-            findViewById<LinearLayout>(R.id.settingLocation)
+        val settingsHelp =
+            findViewById<TextView>(R.id.settingsHelp)
 
-        val settingFavorites =
-            findViewById<LinearLayout>(R.id.settingFavorites)
+        val settingsPrivacy =
+            findViewById<TextView>(R.id.settingsPrivacy)
 
-        val settingTrips =
-            findViewById<LinearLayout>(R.id.settingTrips)
-
-        val settingHelp =
-            findViewById<LinearLayout>(R.id.settingHelp)
-
-        val settingAbout =
-            findViewById<LinearLayout>(R.id.settingAbout)
-
-        val settingPrivacy =
-            findViewById<LinearLayout>(R.id.settingPrivacy)
+        val settingsAbout =
+            findViewById<TextView>(R.id.settingsAbout)
 
         val btnLogout =
             findViewById<Button>(R.id.btnLogout)
-
-        val notificationStatus =
-            findViewById<TextView>(R.id.notificationStatus)
-
-        val languageValue =
-            findViewById<TextView>(R.id.languageValue)
-
-        val appearanceValue =
-            findViewById<TextView>(R.id.appearanceValue)
-
-        val locationValue =
-            findViewById<TextView>(R.id.locationValue)
-
-
-        // -----------------------------
-        // SHARED PREFERENCES
-        // -----------------------------
 
         val preferences =
             getSharedPreferences(
@@ -80,29 +58,17 @@ class SettingsActivity : AppCompatActivity() {
                 MODE_PRIVATE
             )
 
+        // -----------------------------
+        // BACK
+        // -----------------------------
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         // -----------------------------
-        // LOAD SAVED SETTINGS
+        // LOAD APPEARANCE
         // -----------------------------
-
-        val savedLanguage =
-            preferences.getString(
-                "language",
-                "English"
-            )
-
-        languageValue.text = savedLanguage
-
-
-        val notificationOn =
-            preferences.getBoolean(
-                "notifications",
-                true
-            )
-
-        notificationStatus.text =
-            if (notificationOn) "ON" else "OFF"
-
 
         val darkMode =
             preferences.getBoolean(
@@ -110,76 +76,47 @@ class SettingsActivity : AppCompatActivity() {
                 false
             )
 
-        appearanceValue.text =
+        txtAppearance.text =
             if (darkMode) "Dark" else "Light"
 
+        // -----------------------------
+        // LOAD LANGUAGE
+        // -----------------------------
 
-        val locationEnabled =
+        val savedLanguage =
+            preferences.getString(
+                "selectedLanguage",
+                "English"
+            )
+
+        txtSelectedLanguage.text =
+            savedLanguage
+
+        // -----------------------------
+        // LOAD NOTIFICATIONS
+        // -----------------------------
+
+        switchNotifications.isChecked =
             preferences.getBoolean(
-                "location",
+                "notifications",
                 true
             )
 
-        locationValue.text =
-            if (locationEnabled) "Enabled"
-            else "Disabled"
-
-
-        // -----------------------------
-        // BACK BUTTON
-        // -----------------------------
-
-        btnBack.setOnClickListener {
-            finish()
-        }
-
-
-        // -----------------------------
-        // PROFILE
-        // -----------------------------
-
-        settingProfile.setOnClickListener {
-
-            val intent =
-                Intent(
-                    this,
-                    ProfileActivity::class.java
-                )
-
-            startActivity(intent)
-        }
-
-
-        // -----------------------------
-        // NOTIFICATIONS
-        // -----------------------------
-
-        settingNotifications.setOnClickListener {
-
-            val currentStatus =
-                preferences.getBoolean(
-                    "notifications",
-                    true
-                )
-
-            val newStatus =
-                !currentStatus
+        switchNotifications.setOnCheckedChangeListener {
+                _, isChecked ->
 
             preferences.edit()
                 .putBoolean(
                     "notifications",
-                    newStatus
+                    isChecked
                 )
                 .apply()
 
-            notificationStatus.text =
-                if (newStatus) "ON" else "OFF"
-
-            if (newStatus) {
+            if (isChecked) {
 
                 Toast.makeText(
                     this,
-                    "Notifications turned on",
+                    "Notifications turned ON",
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -187,303 +124,72 @@ class SettingsActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "Notifications turned off",
+                    "Notifications turned OFF",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
-
 
         // -----------------------------
         // LANGUAGE
         // -----------------------------
 
-        settingLanguage.setOnClickListener {
-
-            val languages = arrayOf(
-
-                "English",
-
-                "Hindi",
-
-                "Telugu",
-
-                "Tamil",
-
-                "Bengali",
-
-                "Marathi",
-
-                "Gujarati",
-
-                "Kannada",
-
-                "Malayalam",
-
-                "Punjabi",
-
-                "Urdu",
-
-                "French",
-
-                "Spanish",
-
-                "German",
-
-                "Italian",
-
-                "Portuguese",
-
-                "Russian",
-
-                "Japanese",
-
-                "Korean",
-
-                "Chinese",
-
-                "Arabic",
-
-                "Turkish",
-
-                "Indonesian",
-
-                "Vietnamese",
-
-                "Thai"
-            )
-
-
-            val currentLanguage =
-                preferences.getString(
-                    "language",
-                    "English"
-                )
-
-
-            val selectedIndex =
-                languages.indexOf(currentLanguage)
-
-
-            val builder =
-                AlertDialog.Builder(this)
-
-
-            builder.setTitle(
-                "Choose Language"
-            )
-
-
-            builder.setSingleChoiceItems(
-                languages,
-                selectedIndex
-            ) { dialog, which ->
-
-                val selectedLanguage =
-                    languages[which]
-
-
-                languageValue.text =
-                    selectedLanguage
-
-
-                preferences.edit()
-                    .putString(
-                        "language",
-                        selectedLanguage
-                    )
-                    .apply()
-
-
-                dialog.dismiss()
-
-
-                Toast.makeText(
-                    this,
-                    "Language changed to $selectedLanguage",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-
-
-            builder.setNegativeButton(
-                "Cancel",
-                null
-            )
-
-
-            builder.show()
+        layoutLanguage.setOnClickListener {
+            showLanguageDialog()
         }
-
 
         // -----------------------------
         // APPEARANCE
         // -----------------------------
 
-        settingAppearance.setOnClickListener {
-
-            val currentDarkMode =
-                preferences.getBoolean(
-                    "darkMode",
-                    false
-                )
-
-            val newDarkMode =
-                !currentDarkMode
-
-
-            preferences.edit()
-                .putBoolean(
-                    "darkMode",
-                    newDarkMode
-                )
-                .apply()
-
-
-            if (newDarkMode) {
-
-                AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_YES
-                )
-
-                appearanceValue.text =
-                    "Dark"
-
-            } else {
-
-                AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_NO
-                )
-
-                appearanceValue.text =
-                    "Light"
-            }
+        layoutAppearance.setOnClickListener {
+            showAppearanceDialog()
         }
-
-
-        // -----------------------------
-        // LOCATION
-        // -----------------------------
-
-        settingLocation.setOnClickListener {
-
-            val currentLocation =
-                preferences.getBoolean(
-                    "location",
-                    true
-                )
-
-            val newLocation =
-                !currentLocation
-
-
-            preferences.edit()
-                .putBoolean(
-                    "location",
-                    newLocation
-                )
-                .apply()
-
-
-            locationValue.text =
-                if (newLocation)
-                    "Enabled"
-                else
-                    "Disabled"
-
-
-            if (newLocation) {
-
-                Toast.makeText(
-                    this,
-                    "Location services enabled",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            } else {
-
-                Toast.makeText(
-                    this,
-                    "Location services disabled",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-
-
-        // -----------------------------
-        // FAVORITES
-        // -----------------------------
-
-        settingFavorites.setOnClickListener {
-
-            val intent =
-                Intent(
-                    this,
-                    FavoritesActivity::class.java
-                )
-
-            startActivity(intent)
-        }
-
-
-        // -----------------------------
-        // MY TRIPS
-        // -----------------------------
-
-        settingTrips.setOnClickListener {
-
-            val intent =
-                Intent(
-                    this,
-                    MyTripsActivity::class.java
-                )
-
-            startActivity(intent)
-        }
-
 
         // -----------------------------
         // HELP & SUPPORT
         // -----------------------------
 
-        settingHelp.setOnClickListener {
+        settingsHelp.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "TourVista Help & Support",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent =
+                Intent(
+                    this,
+                    HelpSupportActivity::class.java
+                )
+
+            startActivity(intent)
         }
 
-
         // -----------------------------
-        // ABOUT
+        // PRIVACY & POLICY
         // -----------------------------
 
-        settingAbout.setOnClickListener {
+        settingsPrivacy.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "TourVista - Discover India, one journey at a time.",
-                Toast.LENGTH_LONG
-            ).show()
+            val intent =
+                Intent(
+                    this,
+                    PrivacyPolicyActivity::class.java
+                )
+
+            startActivity(intent)
         }
 
-
         // -----------------------------
-        // PRIVACY
+        // ABOUT US
         // -----------------------------
 
-        settingPrivacy.setOnClickListener {
+        settingsAbout.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "Your travel information is kept private.",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent =
+                Intent(
+                    this,
+                    AboutActivity::class.java
+                )
+
+            startActivity(intent)
         }
-
 
         // -----------------------------
         // LOGOUT
@@ -491,26 +197,241 @@ class SettingsActivity : AppCompatActivity() {
 
         btnLogout.setOnClickListener {
 
+            val builder =
+                AlertDialog.Builder(this)
+
+            builder.setTitle("Logout")
+
+            builder.setMessage(
+                "Are you sure you want to logout?"
+            )
+
+            builder.setNegativeButton(
+                "Cancel",
+                null
+            )
+
+            builder.setPositiveButton(
+                "Logout"
+            ) { _, _ ->
+
+                val accountPreferences =
+                    getSharedPreferences(
+                        "TourVistaAccount",
+                        MODE_PRIVATE
+                    )
+
+                accountPreferences.edit()
+                    .putBoolean(
+                        "isLoggedIn",
+                        false
+                    )
+                    .apply()
+
+                val intent =
+                    Intent(
+                        this,
+                        LoginActivity::class.java
+                    )
+
+                intent.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                startActivity(intent)
+
+                finish()
+            }
+
+            builder.show()
+        }
+    }
+
+    // =========================================================
+    // ALL AVAILABLE LANGUAGES
+    // =========================================================
+
+    private fun showLanguageDialog() {
+
+        val preferences =
+            getSharedPreferences(
+                "TourVistaSettings",
+                MODE_PRIVATE
+            )
+
+        val languageMap =
+            mutableMapOf<String, String>()
+
+        Locale.getAvailableLocales().forEach { locale ->
+
+            val languageCode =
+                locale.language
+
+            if (languageCode.isNotEmpty()) {
+
+                val languageName =
+                    locale.getDisplayLanguage(
+                        Locale.ENGLISH
+                    )
+
+                if (languageName.isNotEmpty()) {
+
+                    languageMap[languageName] =
+                        languageCode
+                }
+            }
+        }
+
+        val languages =
+            languageMap.keys
+                .filter {
+                    it.isNotBlank()
+                }
+                .sortedWith(
+                    compareBy(String.CASE_INSENSITIVE_ORDER) {
+                        it
+                    }
+                )
+
+        val languageArray =
+            languages.toTypedArray()
+
+        val currentLanguage =
+            txtSelectedLanguage.text.toString()
+
+        var selectedIndex =
+            languages.indexOf(currentLanguage)
+
+        if (selectedIndex < 0) {
+            selectedIndex = 0
+        }
+
+        val builder =
+            AlertDialog.Builder(this)
+
+        builder.setTitle(
+            "Choose Language"
+        )
+
+        builder.setSingleChoiceItems(
+            languageArray,
+            selectedIndex
+        ) { dialog, which ->
+
+            val selected =
+                languageArray[which]
+
+            txtSelectedLanguage.text =
+                selected
+
+            preferences.edit()
+                .putString(
+                    "selectedLanguage",
+                    selected
+                )
+                .apply()
+
             Toast.makeText(
                 this,
-                "Logged out successfully",
+                "Language selected: $selected",
                 Toast.LENGTH_SHORT
             ).show()
 
-
-            val intent =
-                Intent(
-                    this,
-                    MainActivity::class.java
-                )
-
-
-            intent.flags =
-                Intent.FLAG_ACTIVITY_NEW_TASK or
-                        Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-
-            startActivity(intent)
+            dialog.dismiss()
         }
+
+        builder.setNegativeButton(
+            "Cancel",
+            null
+        )
+
+        builder.show()
+    }
+
+    // =========================================================
+    // APPEARANCE
+    // =========================================================
+
+    private fun showAppearanceDialog() {
+
+        val preferences =
+            getSharedPreferences(
+                "TourVistaSettings",
+                MODE_PRIVATE
+            )
+
+        val darkMode =
+            preferences.getBoolean(
+                "darkMode",
+                false
+            )
+
+        val options =
+            arrayOf(
+                "Light",
+                "Dark"
+            )
+
+        val selectedIndex =
+            if (darkMode) 1 else 0
+
+        val builder =
+            AlertDialog.Builder(this)
+
+        builder.setTitle(
+            "Choose Appearance"
+        )
+
+        builder.setSingleChoiceItems(
+            options,
+            selectedIndex
+        ) { dialog, which ->
+
+            if (which == 0) {
+
+                preferences.edit()
+                    .putBoolean(
+                        "darkMode",
+                        false
+                    )
+                    .apply()
+
+                txtAppearance.text =
+                    "Light"
+
+                AppCompatDelegate
+                    .setDefaultNightMode(
+                        AppCompatDelegate
+                            .MODE_NIGHT_NO
+                    )
+
+            } else {
+
+                preferences.edit()
+                    .putBoolean(
+                        "darkMode",
+                        true
+                    )
+                    .apply()
+
+                txtAppearance.text =
+                    "Dark"
+
+                AppCompatDelegate
+                    .setDefaultNightMode(
+                        AppCompatDelegate
+                            .MODE_NIGHT_YES
+                    )
+            }
+
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton(
+            "Cancel",
+            null
+        )
+
+        builder.show()
     }
 }

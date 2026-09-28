@@ -15,29 +15,9 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            val preferences =
-                getSharedPreferences("TourVistaAccount", MODE_PRIVATE)
+            val intent = Intent(this, WelcomeActivity::class.java)
 
-            val isLoggedIn =
-                preferences.getBoolean("isLoggedIn", false)
-
-            if (isLoggedIn) {
-
-                // User already logged in
-                val intent =
-                    Intent(this, MainActivity::class.java)
-
-                startActivity(intent)
-
-            } else {
-
-                // New user / logged-out user
-                val intent =
-                    Intent(this, WelcomeActivity::class.java)
-
-                startActivity(intent)
-            }
-
+            startActivity(intent)
             finish()
 
         }, 1500)

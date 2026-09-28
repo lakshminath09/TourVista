@@ -17,14 +17,18 @@ class ProfileActivity : AppCompatActivity() {
 
         profileName = findViewById(R.id.profileName)
 
-        val btnBack = findViewById<TextView>(R.id.btnBack)
+        val btnBack =
+            findViewById<TextView>(R.id.btnBack)
+
         val btnEditProfile =
             findViewById<Button>(R.id.btnEditProfile)
 
+        // Back button
         btnBack.setOnClickListener {
             finish()
         }
 
+        // Edit Profile button
         btnEditProfile.setOnClickListener {
 
             val intent =
@@ -55,3 +59,4 @@ class ProfileActivity : AppCompatActivity() {
         profileName.text = name
     }
 }
+

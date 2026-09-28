@@ -3,139 +3,105 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#FFFFFF">
+    android:background="#F7FAFF"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:paddingStart="28dp"
-        android:paddingEnd="28dp"
-        android:paddingTop="55dp"
-        android:paddingBottom="35dp">
+        android:padding="28dp">
 
-        <!-- TourVista Logo -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <!-- TOURVISTA LOGO -->
         <ImageView
-            android:id="@+id/welcomeLogo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="155dp"
+            android:layout_height="155dp"
             android:src="@drawable/tourvista_logo"
             android:scaleType="centerInside"
             android:contentDescription="TourVista Logo" />
 
-        <!-- App Name -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <!-- TITLE -->
         <TextView
-            android:id="@+id/welcomeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="Welcome to TourVista"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#222222"
+            android:textColor="#1565C0"
             android:gravity="center" />
 
-        <!-- Subtitle -->
+        <!-- SUBTITLE -->
         <TextView
-            android:id="@+id/welcomeSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Discover India, one journey at a time."
-            android:textSize="15sp"
-            android:textColor="#777777"
-            android:gravity="center"
-            android:lineSpacingExtra="3dp" />
+            android:textSize="16sp"
+            android:textColor="#546E7A"
+            android:gravity="center" />
 
-        <!-- Small Description -->
+        <!-- DESCRIPTION -->
         <TextView
-            android:id="@+id/welcomeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="Explore amazing destinations, plan your trips and get smart travel assistance."
+            android:text="Explore beautiful destinations, plan your trips and discover amazing experiences with TourVista."
             android:textSize="14sp"
-            android:textColor="#888888"
+            android:textColor="#78909C"
             android:gravity="center"
             android:lineSpacingExtra="4dp" />
 
-        <!-- Create Account -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <!-- CREATE ACCOUNT BUTTON -->
         <Button
             android:id="@+id/btnCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginTop="38dp"
             android:text="Create Account"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#2E7D32" />
+            android:backgroundTint="#1976D2"
+            android:textAllCaps="false"
+            android:elevation="3dp" />
 
-        <!-- Login -->
+        <!-- LOGIN BUTTON -->
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="14dp"
             android:text="Login"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:backgroundTint="#E8F5E9" />
+            android:textColor="#1976D2"
+            android:backgroundTint="#E3F1FF"
+            android:textAllCaps="false"
+            android:elevation="1dp" />
 
-        <!-- OR -->
-        <LinearLayout
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="30dp" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="#DDDDDD" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="OR"
-                android:textSize="12sp"
-                android:textColor="#999999" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="#DDDDDD" />
-
-        </LinearLayout>
-
-        <!-- Guest -->
+        <!-- FOOTER -->
         <TextView
-            android:id="@+id/btnGuest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Continue as Guest"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:padding="12dp" />
-
-        <!-- Bottom Text -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:text="Your journey starts here ✈️"
-            android:textSize="13sp"
-            android:textColor="#999999"
+            android:text="Your journey. Your India. Your TourVista."
+            android:textSize="12sp"
+            android:textColor="#90A4AE"
             android:gravity="center" />
 
     </LinearLayout>

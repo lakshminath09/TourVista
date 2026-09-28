@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "910521791235",
+    "project_id": "tourvista-1da21",
+    "storage_bucket": "tourvista-1da21.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910521791235:android:239922f52203df0418ef36",
+        "android_client_info": {
+          "package_name": "com.tourvista.india"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910521791235-rdsn7d505srsh0ulsm96hqckb0r0gfoh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tourvista.india",
+            "certificate_hash": "f4e72d57e77a5eb16379dcee79fb3b07563c32a0"
+          }
+        },
+        {
+          "client_id": "910521791235-0m7b2nc829inhaf2jna2p11o3768741a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWjUuPrEbW7h7FBp2QbMtuKNqNK18Wrb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910521791235-0m7b2nc829inhaf2jna2p11o3768741a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

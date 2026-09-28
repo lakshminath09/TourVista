@@ -1,69 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:colorBackground">
+    android:background="#F8FAFF"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
-        <!-- HEADER -->
-
+        <!-- Back -->
         <TextView
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:text="←  Settings"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:textColor="?android:textColorPrimary"
-            android:gravity="center_vertical"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customize your TourVista experience"
-            android:textSize="14sp"
-            android:textColor="?android:textColorSecondary"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="28dp" />
+            android:padding="8dp"
+            android:text="← Back"
+            android:textColor="#1976D2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <!-- ACCOUNT -->
-
+        <!-- Title -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACCOUNT"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginBottom="10dp" />
-
-        <LinearLayout
-            android:id="@+id/settingProfile"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:clickable="true"
-            android:focusable="true">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Settings"
+            android:textColor="#123B6D"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="👤"
-                android:textSize="22sp"
-                android:gravity="center" />
+        <!-- Notifications -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -74,469 +52,174 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profile"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="?android:textColorPrimary" />
+                    android:text="🔔  Notifications"
+                    android:textColor="#222222"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Manage your personal information"
-                    android:textSize="12sp"
-                    android:textColor="?android:textColorSecondary"
-                    android:layout_marginTop="3dp" />
+                    android:layout_marginTop="4dp"
+                    android:text="Receive travel updates and reminders"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
-            <TextView
+            <Switch
+                android:id="@+id/switchNotifications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary" />
+                android:checked="true" />
 
         </LinearLayout>
 
-
+        <!-- Language -->
         <LinearLayout
-            android:id="@+id/settingNotifications"
+            android:id="@+id/layoutLanguage"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="🔔"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/notificationTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Notifications"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="?android:textColorPrimary" />
-
-                <TextView
-                    android:id="@+id/notificationSubtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trip reminders and updates"
-                    android:textSize="12sp"
-                    android:textColor="?android:textColorSecondary"
-                    android:layout_marginTop="3dp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/notificationStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ON"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#2E7D32" />
-
-        </LinearLayout>
-
-
-        <!-- APP PREFERENCES -->
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="APP PREFERENCES"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="10dp" />
-
-
-        <LinearLayout
-            android:id="@+id/settingLanguage"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
             android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="🌐"
-                android:textSize="22sp"
-                android:gravity="center" />
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Language"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
+                android:text="🌐  Language"
+                android:textColor="#222222"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/languageValue"
+                android:id="@+id/txtSelectedLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="English"
-                android:textSize="14sp"
-                android:textColor="?android:textColorSecondary" />
+                android:textColor="#1976D2"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_marginStart="8dp" />
+                android:textColor="#777777"
+                android:textSize="24sp" />
 
         </LinearLayout>
 
-
+        <!-- Appearance -->
         <LinearLayout
-            android:id="@+id/settingAppearance"
+            android:id="@+id/layoutAppearance"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
             android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="🎨"
-                android:textSize="22sp"
-                android:gravity="center" />
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Appearance"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
+                android:text="🎨  Appearance"
+                android:textColor="#222222"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/appearanceValue"
+                android:id="@+id/txtAppearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Light"
-                android:textSize="14sp"
-                android:textColor="?android:textColorSecondary" />
+                android:textColor="#1976D2"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_marginStart="8dp" />
+                android:textColor="#777777"
+                android:textSize="24sp" />
 
         </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/settingLocation"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="📍"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Location Services"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:id="@+id/locationValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Enabled"
-                android:textSize="14sp"
-                android:textColor="?android:textColorSecondary" />
-
-        </LinearLayout>
-
-
-        <!-- TRAVEL -->
-
+        <!-- More Section -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TRAVEL"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginTop="30dp"
+            android:text="More"
+            android:textColor="#123B6D"
+            android:textSize="19sp"
+            android:textStyle="bold" />
 
-
-        <LinearLayout
-            android:id="@+id/settingFavorites"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="❤️"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Favorites"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/settingTrips"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="🧳"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="My Trips"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <!-- SUPPORT -->
-
+        <!-- Help & Support -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/settingsHelp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SUPPORT"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="10dp" />
-
-
-        <LinearLayout
-            android:id="@+id/settingHelp"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:padding="18dp"
+            android:text="🆘  Help &amp; Support"
+            android:textColor="#222222"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="❓"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Help &amp; Support"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/settingAbout"
+        <!-- Privacy -->
+        <TextView
+            android:id="@+id/settingsPrivacy"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:padding="18dp"
+            android:text="🔐  Privacy &amp; Policy"
+            android:textColor="#222222"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="ℹ️"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="About TourVista"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/settingPrivacy"
+        <!-- About -->
+        <TextView
+            android:id="@+id/settingsAbout"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:colorBackground"
-            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:padding="18dp"
+            android:text="ℹ️  About Us"
+            android:textColor="#222222"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:text="🔒"
-                android:textSize="22sp"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Privacy Policy"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
-
-            <TextView
-                android:text="›"
-                android:textSize="28sp"
-                android:textColor="?android:textColorSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <!-- LOGOUT -->
-
+        <!-- Logout -->
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="🚪  Logout"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#D32F2F"
-            android:backgroundTint="?android:colorBackground"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#D32F2F"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

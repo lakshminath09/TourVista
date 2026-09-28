@@ -1,208 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- PROFILE HEADER -->
-
     <LinearLayout
-        android:id="@+id/viewProfile"
         android:layout_width="match_parent"
-        android:layout_height="135dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingStart="25dp"
-        android:paddingEnd="20dp"
-        android:background="#E8F5E9"
-        android:clickable="true"
-        android:focusable="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
-            android:layout_width="55dp"
+            android:id="@+id/profileTitle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:text="Profile"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp" />
+
+        <TextView
+            android:id="@+id/viewProfile"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="👤"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:background="#FFFFFF" />
+            android:gravity="center_vertical"
+            android:text="👤   View Profile"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="15dp">
+        <TextView
+            android:id="@+id/menuHome"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="🏠   Home"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lakshmi Devi"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                android:textColor="#222222" />
+        <TextView
+            android:id="@+id/menuExplore"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="🧭   Explore"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View Profile  →"
-                android:textSize="14sp"
-                android:textColor="#777777"
-                android:layout_marginTop="5dp" />
+        <TextView
+            android:id="@+id/menuFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="❤️   Favorites"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/menuTrips"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="🧳   My Trips"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/menuSettings"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="⚙️   Settings"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/menuAbout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="ℹ️   About Us"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/menuHelp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="❓   Help &amp; Support"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/menuPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="🔒   Privacy Policy"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/menuLogout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:text="🚪   Logout"
+            android:textColor="#D32F2F"
+            android:textSize="17sp"
+            android:paddingStart="10dp"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 
-
-    <!-- MENU ITEMS -->
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="10dp">
-
-
-            <!-- HOME -->
-
-            <TextView
-                android:id="@+id/menuHome"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="🏠   Home"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- EXPLORE -->
-
-            <TextView
-                android:id="@+id/menuExplore"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="🔍   Explore"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- FAVORITES -->
-
-            <TextView
-                android:id="@+id/menuFavorites"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="❤️   Favorites"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- MY TRIPS -->
-
-            <TextView
-                android:id="@+id/menuTrips"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="🧳   My Trips"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- DIVIDER -->
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#EEEEEE"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-
-
-            <!-- SETTINGS -->
-
-            <TextView
-                android:id="@+id/menuSettings"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="⚙️   Settings"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- ABOUT US -->
-
-            <TextView
-                android:id="@+id/menuAbout"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="ℹ️   About Us"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- HELP & SUPPORT -->
-
-            <TextView
-                android:id="@+id/menuHelp"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="❓   Help &amp; Support"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-
-            <!-- PRIVACY POLICY -->
-
-            <TextView
-                android:id="@+id/menuPrivacy"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="📄   Privacy Policy"
-                android:textSize="17sp"
-                android:textColor="#222222"
-                android:gravity="center_vertical"
-                android:paddingStart="25dp" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
-    <!-- LOGOUT -->
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EEEEEE" />
-
-    <TextView
-        android:id="@+id/menuLogout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="🚪   Logout"
-        android:textSize="17sp"
-        android:textColor="#D32F2F"
-        android:gravity="center_vertical"
-        android:paddingStart="25dp" />
-
-</LinearLayout>
+</ScrollView>
